@@ -1,0 +1,12 @@
+﻿body {
+    background-color: #A7D397; /* A light gray background */
+}
+body, html {
+    height: 100%; /* Ensure the body and html take up the full viewport height */
+    margin: 0; /* Reset default margin */
+    background-color: #f4f4f4; /* A light gray background */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-family: Arial, sans-serif; /* Optional: Set a default font */
+}

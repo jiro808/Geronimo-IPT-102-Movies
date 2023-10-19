@@ -1,31 +1,31 @@
-﻿@model List<MovieViewModel>
-
-@{
-    ViewData["Title"] = "Home Page";
-}
-
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Rating</th>
-            <th>Release Year</th>
-            <th>Genre</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var movie in Model)
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Table</title>
+</head>
+<body>
+    <div class="container">
+        @for (var i = 0; i < Model.Count; i += 5)
         {
-            <tr>
-                <td>@movie.Id</td>
-                <td ><a href = "/movies/getmovie/@movie.Id" > @movie.Name </a></td>
-                <td>@movie.Rating</td>
-                <td>@movie.ReleaseYear</td>
-                <td>@movie.Genre</td>
-            </tr>
+            <div class="row">
+                @for (var j = i; j < Math.Min(i + 5, Model.Count); j++)
+                {
+                    <div class="col-md-2 mb-4">
+                        <div class="card">
+                            <img src="@Model[j].ImageUrl" alt="@Model[j].Name" class="card-img-top custom-image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="/movies/getmovie/@Model[j].Id">@Model[j].Name</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
         }
-    </tbody>
-</table>
-
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
