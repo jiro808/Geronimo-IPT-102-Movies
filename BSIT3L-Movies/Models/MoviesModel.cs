@@ -14,6 +14,8 @@ namespace BSIT3L_Movies.Models
 
 		public string ytid { get; set; }
 
+		public string MovieDetails { get; set; }
+
 	}
 }
 
